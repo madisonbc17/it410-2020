@@ -1,0 +1,73 @@
+openapi: '3.0.2'
+info:
+    title: "Class Website"
+    version: '1.0.0'
+paths:
+  /users:
+    get:
+      tags:
+        - Users
+      responses:
+        200:
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Users'
+                
+    post:
+      tags:
+        - Users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Users'
+      responses:
+        200:
+          description: Correctly posted user
+          
+          
+  /users/{id}:
+    parameters: 
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+    get:
+      tags:
+        - Users
+      parameters:
+        - name: x
+          in: query
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          
+  /createEvent:
+    post:
+      responses:
+        200:
+          description: Create schedule event.
+          
+components:
+  schemas:
+    Users:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: number
+          minimum: 1
+        name:
+          type: string
+        password:
+          type: string
+        user_type:
+          type: string

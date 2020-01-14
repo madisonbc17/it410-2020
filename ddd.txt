@@ -1,3 +1,79 @@
 Events
-- etc
-Hi
+
+- course...
+- user logged in
+- user logged out
+- user created
+- user updated
+- user deleted
+- schedule created
+- schedule updated
+- schedule deleted
+- assignment created
+- assignment updated
+- assignment deleted
+- student list created (batch)
+- student added to list
+- student deleted from list
+- student updated on list
+- student list deleted (batch)
+- file uploaded
+- file deleted
+- file downloaded
+- assignment comment sent
+- assignment comment updated
+- assignment comment deleted
+
+Commands
+
+- create user
+- update user info
+- delete a user
+- create a schedule event
+- update a schedule event
+- delete a schedule event
+- create an assignment
+- update an assignment
+- delete an assignment
+- create a student list
+- update a student list
+- delete a student list
+- upload a file
+- delete a file
+- create an assignment comment
+- update an assignment comment
+- delete an assignment comment
+
+Entities:
+
+user
+- id (string)
+- name (string)
+- password/access code (string)
+- type (string) parent/student/user
+
+schedule events
+- id (number)
+- title (string)
+- date (string)
+- description (string)
+
+assignment
+- id (number)
+- name (string)
+- description (string)
+
+students
+- id (number)
+- name (string)
+- user_id (string)
+
+assignment comment
+- id (number)
+- assignment_id (number)
+- user_id (string)
+- text (string)
+
+Value Objects
+
+- file
