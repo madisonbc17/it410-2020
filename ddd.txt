@@ -1,4 +1,5 @@
 Events
+<<<<<<< HEAD
 
 - course...
 - user logged in
@@ -77,3 +78,8 @@ assignment comment
 Value Objects
 
 - file
+=======
+- etc
+Hi
+adding more stuff
+>>>>>>> fb5df984c1e06daca13a2415310a7842fee2ab69
