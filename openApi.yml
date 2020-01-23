@@ -29,7 +29,6 @@ paths:
         200:
           description: Correctly posted user
           
-          
   /users/{id}:
     parameters: 
       - name: id
@@ -48,15 +47,125 @@ paths:
       responses:
         200:
           description: OK
+    
+    post:
+      tags:
+        - Users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Users'
+      responses:
+        200:
+          description: Correctly updated user
           
   /createEvent:
     post:
+      tags:
+        - Events
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Events'
       responses:
         200:
           description: Create schedule event.
+    
+  /assignments:
+    get:
+      tags:
+        - Assignments
+
+      responses:
+        200:
+          description: A list of assignments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Assignments'
+    post:
+      tags:
+        - Assignments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Assignments'
+      responses:
+        200:
+          description: Correctly uploaded assignment
+
+  /assignment/{id}:
+    parameters: 
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+    get:
+      tags:
+        - Assignments
+      parameters:
+        - name: z
+          in: query
+          schema:
+            type: object
+      responses:
+        200:
+          description: OK
+
+  /current_students:
+    get:
+      tags:
+        - Students
+      responses:
+        200:
+          description: A list of assignments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Students'
+      
           
 components:
   schemas:
+    
+    Events:
+      type: object
+      required:
+        - title
+        - date
+      properties:
+        id:
+          type: number
+          minimum: 1
+        title:
+          type: string
+        date:
+          type: string
+        description:
+          type: string
+    
+    Assignments:
+      type: object
+      required:
+        - name
+        - description
+      properties:
+        id:
+          type: number
+          minimum: 1
+        name:
+          type: string
+        description:
+          type: string
+          
     Users:
       type: object
       required:
@@ -71,3 +180,18 @@ components:
           type: string
         user_type:
           type: string
+    
+    Students:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: number
+          minimum: 1
+        name:
+          type: string
+        user_id:
+          type: number
+          
+          
