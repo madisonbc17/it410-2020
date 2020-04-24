@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+    server:
+        container_name: classite
+        restart: always
+        build: ./
+        ports: 
+            - '${SERVER_PORT}:3000'
+        # volumes:
+        #     - .:/var/classite
+        depends_on: 
+            - mongo
+        links:
+            - mongo
+        networks:
+            - appnetwork
+
+    mongo:
+        image: mongo
+        container_name: class_mongo
+        restart: always
+        ports:
+            - '27017:27017'
+        networks:
+            - appnetwork
+
+networks:
+    appnetwork:
+        driver: bridge 
+
