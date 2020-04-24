@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <message-list></message-list>
+    <class-page></class-page>
   </div>
 </template>
 
 <script>
-import MessageList from './MessageList.vue'
+import ClassPage from './ClassPage.vue'
 export default {
   name: 'app',
   components: {
-    MessageList
+    Classpage
   }
 }
 </script>

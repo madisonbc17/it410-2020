@@ -184,7 +184,7 @@ const deleteComment = (itemId) => {
 }
 
 export default {
-  name: 'message-list',
+  name: 'class-page',
   data: () => {
     return {
       myText: "Mrs. Robertson's Class",

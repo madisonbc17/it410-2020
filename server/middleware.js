@@ -5,12 +5,10 @@ const log_path_middleware = (req, res, next) => {
     next()
 }
 
-const add_property = (req, res, next) => {
-    //connect
-    req.add_property = 'Hello, World!'
-    // console.log('It works!')
-    next()
-}
+// const add_property = (req, res, next) => {
+//     //connect
+//     next()
+// }
 
-// module.exports = {log_path_middleware, add_property}
+// // module.exports = {log_path_middleware, add_property}
 module.exports = {log_path_middleware}

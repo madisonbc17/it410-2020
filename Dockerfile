@@ -1,5 +1,5 @@
  # Base the image off of the NodeJS image
- #FROM node:latest
+
 FROM node:lts-alpine
 WORKDIR /var/classite
 
