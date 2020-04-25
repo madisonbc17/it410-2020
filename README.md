@@ -1,5 +1,21 @@
 # it410-2020
-Website for IT&C 410 Advanced Web Technologies
+This is my final website for an advanced web technology course I took my senior year of college.
+The main concepts we learned and applied include:
+- Domain Driven Design
+- Git
+- REST APIs
+- JavaScript Fundamentals
+- NodeJS and NPM
+- Express middleware
+- Testing in NodeJS
+- Asynchronous Events in JavaScript
+- Docker
+- SQL and NoSQL databases
+- Session Management
+- HTML and CSS
+- Browser Events
+- Vue
+- Nuxt
 
 ## System Requirements
 In order to run this website, Docker must be installed and running.
